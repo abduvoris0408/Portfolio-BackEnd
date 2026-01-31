@@ -48,6 +48,7 @@ const userRoutes = require('./routes/user.routes')
 const projectRoutes = require('./routes/project.routes')
 const skillRoutes = require('./routes/skill.routes')
 const categoryRoutes = require('./routes/category.routes')
+const swaggerDocs = require('./config/swagger.config')
 
 // Mount routes
 app.use(`${config.api.prefix}/${config.api.version}/auth`, authRoutes)
@@ -56,6 +57,7 @@ app.use(`${config.api.prefix}/${config.api.version}/projects`, projectRoutes)
 app.use(`${config.api.prefix}/${config.api.version}/skills`, skillRoutes)
 app.use(`${config.api.prefix}/${config.api.version}/categories`, categoryRoutes)
 // 404 handler
+swaggerDocs(app)
 app.use((req, res) => {
 	res.status(404).json({
 		success: false,

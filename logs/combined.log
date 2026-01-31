@@ -231,3 +231,80 @@
 2026-01-31 15:52:03 [INFO]: 📚 API: http://localhost:5000/api
 2026-01-31 15:52:03 [INFO]: 🌍 Environment: development
 2026-01-31 16:07:45 [INFO]: SIGINT signal qabul qilindi, server yopilmoqda...
+2026-01-31 16:39:17 [ERROR]: MongoDB ulanmadi: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+2026-01-31 16:43:49 [ERROR]: MongoDB ulanmadi: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+2026-01-31 16:49:22 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 16:49:22 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 16:49:22 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 16:49:22 [INFO]: 🌍 Environment: development
+2026-01-31 16:53:20 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 16:53:20 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 16:53:20 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 16:53:20 [INFO]: 🌍 Environment: development
+2026-01-31 16:56:05 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 16:56:05 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 16:56:05 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 16:56:05 [INFO]: 🌍 Environment: development
+2026-01-31 16:59:06 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 16:59:06 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 16:59:06 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 16:59:06 [INFO]: 🌍 Environment: development
+2026-01-31 16:59:43 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 16:59:43 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 16:59:43 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 16:59:43 [INFO]: 🌍 Environment: development
+2026-01-31 17:00:25 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 17:00:25 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 17:00:25 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 17:00:25 [INFO]: 🌍 Environment: development
+2026-01-31 17:01:24 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 17:01:24 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 17:01:24 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 17:01:24 [INFO]: 🌍 Environment: development
+2026-01-31 17:02:09 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 17:02:09 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 17:02:09 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 17:02:09 [INFO]: 🌍 Environment: development
+2026-01-31 17:02:42 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 17:02:42 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 17:02:42 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 17:02:42 [INFO]: 🌍 Environment: development
+2026-01-31 17:02:46 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 17:02:46 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 17:02:46 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 17:02:46 [INFO]: 🌍 Environment: development
+2026-01-31 17:02:56 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 17:02:56 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 17:02:56 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 17:02:56 [INFO]: 🌍 Environment: development
+2026-01-31 17:03:37 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 17:03:37 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 17:03:37 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 17:03:37 [INFO]: 🌍 Environment: development
+2026-01-31 17:08:45 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 17:08:45 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 17:08:45 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 17:08:45 [INFO]: 🌍 Environment: development
+2026-01-31 17:12:32 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 17:12:32 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 17:12:32 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 17:12:32 [INFO]: 🌍 Environment: development
+2026-01-31 17:12:39 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 17:12:39 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 17:12:39 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 17:12:39 [INFO]: 🌍 Environment: development
+2026-01-31 17:12:42 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 17:12:42 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 17:12:42 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 17:12:42 [INFO]: 🌍 Environment: development
+2026-01-31 17:13:51 [INFO]: SIGINT signal qabul qilindi, server yopilmoqda...
+2026-01-31 17:13:59 [INFO]: MongoDB muvaffaqiyatli ulandi! 🚀
+2026-01-31 17:13:59 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-01-31 17:13:59 [INFO]: 📚 API: http://localhost:5000/api
+2026-01-31 17:13:59 [INFO]: 🌍 Environment: development
+2026-01-31 17:15:51 [ERROR]: Error: Token yaroqsiz yoki muddati o'tgan
+2026-01-31 17:16:27 [ERROR]: Error: Token yaroqsiz yoki muddati o'tgan
+2026-01-31 17:16:28 [ERROR]: Error: Token yaroqsiz yoki muddati o'tgan
+2026-01-31 17:16:29 [ERROR]: Error: Token yaroqsiz yoki muddati o'tgan
+2026-01-31 17:16:30 [ERROR]: Error: Token yaroqsiz yoki muddati o'tgan
+2026-01-31 17:25:30 [INFO]: SIGINT signal qabul qilindi, server yopilmoqda...

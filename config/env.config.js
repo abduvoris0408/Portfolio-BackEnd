@@ -5,7 +5,7 @@ module.exports = {
 	nodeEnv: process.env.NODE_ENV || 'development',
 	mongodbUri: process.env.MONGODB_URI || '', // <--- YANGI QATOR
 	api: {
-		version: process.env.API_VERSION || 'v1',
+		version: process.env.API_VERSION || 'v2',
 		prefix: process.env.API_PREFIX || '/api',
 	},
 	cors: {
