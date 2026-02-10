@@ -1,61 +1,62 @@
-const mongoose = require('mongoose')
+const { DataTypes } = require('sequelize')
+const { sequelize } = require('../config/db.config')
+const slugify = require('../utils/slugify')
 
-const CategorySchema = new mongoose.Schema(
-	{
-		name: {
-			type: String,
-			required: [true, 'Kategoriya nomi kiritish majburiy'],
-			trim: true,
-			unique: true,
-			maxlength: [50, 'Kategoriya nomi 50 ta belgidan oshmasligi kerak'],
-		},
-		slug: {
-			type: String,
-			unique: true,
-			lowercase: true,
-		},
-		description: {
-			type: String,
-			maxlength: [500, 'Tavsif 500 ta belgidan oshmasligi kerak'],
-		},
-		icon: {
-			type: String,
-			trim: true,
-		},
-		color: {
-			type: String,
-			default: '#3B82F6',
-		},
-		user: {
-			type: mongoose.Schema.Types.ObjectId,
-			ref: 'User',
-			required: true,
+const Category = sequelize.define('categories', {
+	id: {
+		type: DataTypes.UUID,
+		defaultValue: DataTypes.UUIDV4,
+		primaryKey: true,
+	},
+	name: {
+		type: DataTypes.STRING(100),
+		allowNull: false,
+		validate: { notEmpty: { msg: 'Kategoriya nomi kiritish majburiy' } },
+	},
+	slug: {
+		type: DataTypes.STRING(120),
+	},
+	type: {
+		type: DataTypes.ENUM('project', 'blog', 'service', 'skill', 'news'),
+		allowNull: false,
+		validate: { notEmpty: { msg: 'Kategoriya turi kiritish majburiy' } },
+	},
+	description: {
+		type: DataTypes.TEXT,
+		defaultValue: '',
+	},
+	icon: {
+		type: DataTypes.STRING(100),
+		defaultValue: '',
+	},
+	color: {
+		type: DataTypes.STRING(20),
+		defaultValue: '#3B82F6',
+	},
+	image: {
+		type: DataTypes.JSONB,
+		defaultValue: null,
+		comment: '{ url, publicId }',
+	},
+	isActive: {
+		type: DataTypes.BOOLEAN,
+		defaultValue: true,
+		field: 'is_active',
+	},
+}, {
+	tableName: 'categories',
+	indexes: [
+		{ unique: true, fields: ['name', 'type'] },
+		{ fields: ['slug'] },
+		{ fields: ['type'] },
+	],
+	hooks: {
+		beforeValidate: (category) => {
+			if (category.name) {
+				category.slug = slugify(category.name)
+			}
 		},
 	},
-	{
-		timestamps: true,
-		toJSON: { virtuals: true },
-		toObject: { virtuals: true },
-	},
-)
-
-// Slug yaratish (save qilishdan oldin)
-CategorySchema.pre('save', function (next) {
-	if (this.isModified('name')) {
-		this.slug = this.name
-			.toLowerCase()
-			.replace(/[^a-z0-9]+/g, '-')
-			.replace(/(^-|-$)/g, '')
-	}
-	next()
 })
 
-// Virtual - Kategoriyaning projectlari soni
-CategorySchema.virtual('projectCount', {
-	ref: 'Project',
-	localField: '_id',
-	foreignField: 'category',
-	count: true,
-})
-
-module.exports = mongoose.model('Category', CategorySchema)
+module.exports = Category

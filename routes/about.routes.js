@@ -1,64 +1,43 @@
 const express = require('express')
 const router = express.Router()
-const { getAbout } = require('../controllers/about.controller')
+const { protect } = require('../middleware/auth.middleware')
+const validate = require('../middleware/validate')
+const { createOrUpdateSchema } = require('../validators/about.validator')
+const { uploadAboutFiles } = require('../config/cloudinary.config')
 
-/**
- * @swagger
- * tags:
- *   name: About
- *   description: Portfolio haqida ma'lumot (about me)
- */
+const {
+    getAbout,
+    getAboutAdmin,
+    createOrUpdateAbout,
+    uploadAvatar,
+    uploadCover,
+    uploadResume,
+    deleteAvatar,
+    deleteCover,
+    deleteResume,
+    updateSection,
+    deleteAbout,
+} = require('../controllers/about.controller')
 
-/**
- * @swagger
- * /api/v2/about:
- *   get:
- *     summary: Portfolio egasi haqida ma'lumot olish
- *     description: Foydalanuvchi (developer) haqidagi umumiy ma'lumotni qaytaradi (bio, tajriba, kontakt va h.k.)
- *     tags: [About]
- *     responses:
- *       200:
- *         description: Muvaffaqiyatli — about ma'lumoti qaytadi
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 success:
- *                   type: boolean
- *                   example: true
- *                 data:
- *                   type: object
- *                   properties:
- *                     bio:
- *                       type: string
- *                       example: "Full-stack developer with 3+ years experience..."
- *                     experience:
- *                       type: string
- *                       example: "3 yillik tajriba"
- *                     location:
- *                       type: string
- *                       example: "Toshkent, O'zbekiston"
- *                     email:
- *                       type: string
- *                       example: "abduvoris@example.com"
- *                     socialLinks:
- *                       type: object
- *                       properties:
- *                         github:
- *                           type: string
- *                         linkedin:
- *                           type: string
- *                         telegram:
- *                           type: string
- *       500:
- *         description: Server xatosi
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Error'
- */
-
+// ===== PUBLIC =====
 router.get('/', getAbout)
+
+// ===== PRIVATE (ADMIN) =====
+router.get('/admin', protect, getAboutAdmin)
+router.post('/', protect, validate(createOrUpdateSchema), createOrUpdateAbout)
+router.delete('/', protect, deleteAbout)
+
+// Rasm va fayl yuklash
+router.put('/avatar', protect, uploadAboutFiles.single('avatar'), uploadAvatar)
+router.put('/cover', protect, uploadAboutFiles.single('cover'), uploadCover)
+router.put('/resume', protect, uploadAboutFiles.single('resume'), uploadResume)
+
+// Rasm va fayl o'chirish
+router.delete('/avatar', protect, deleteAvatar)
+router.delete('/cover', protect, deleteCover)
+router.delete('/resume', protect, deleteResume)
+
+// Bo'lim yangilash (PATCH)
+router.patch('/:section', protect, updateSection)
 
 module.exports = router

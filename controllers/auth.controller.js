@@ -1,57 +1,79 @@
 const asyncHandler = require('../utils/asyncHandler')
 const ErrorResponse = require('../utils/ErrorResponse')
-const User = require('../models/User')
-const sendTokenResponse = require('../utils/jwt')
+const { User } = require('../models')
 
-// @desc    Register user
-// @route   POST /api/v1/auth/register
-// @access  Public
-exports.register = asyncHandler(async (req, res, next) => {
-	const { name, email, password, role } = req.body
+// Helper – Token response
+const sendTokenResponse = (user, statusCode, res) => {
+	const accessToken = user.getSignedJwtToken()
+	const refreshToken = user.getRefreshToken()
 
-	// User yaratish
-	const user = await User.create({
-		name,
-		email,
-		password,
-		role,
-	})
+	const cookieOptions = {
+		expires: new Date(
+			Date.now() + (parseInt(process.env.JWT_COOKIE_EXPIRE) || 7) * 24 * 60 * 60 * 1000,
+		),
+		httpOnly: true,
+		secure: process.env.NODE_ENV === 'production',
+		sameSite: 'strict',
+	}
 
-	sendTokenResponse(user, 201, res)
-})
+	res
+		.status(statusCode)
+		.cookie('token', accessToken, cookieOptions)
+		.json({
+			success: true,
+			data: {
+				accessToken,
+				refreshToken,
+				user: {
+					id: user.id,
+					name: user.name,
+					email: user.email,
+					role: user.role,
+					avatar: user.avatar,
+				},
+			},
+		})
+}
 
-// @desc    Login user
+// @desc    Login admin
 // @route   POST /api/v1/auth/login
-// @access  Public
 exports.login = asyncHandler(async (req, res, next) => {
 	const { email, password } = req.body
 
-	// Email va parol kiritilganligini tekshirish
-	if (!email || !password) {
-		return next(new ErrorResponse('Email va parolni kiriting', 400))
-	}
-
-	// User'ni topish (parol bilan)
-	const user = await User.findOne({ email }).select('+password')
+	const user = await User.scope('withPassword').findOne({ where: { email } })
 
 	if (!user) {
 		return next(new ErrorResponse("Email yoki parol noto'g'ri", 401))
 	}
 
-	// Parolni tekshirish
+	if (user.isLocked) {
+		const lockTime = Math.ceil((user.lockUntil - Date.now()) / 60000)
+		return next(
+			new ErrorResponse(`Account bloklangan. ${lockTime} daqiqadan keyin urinib ko'ring`, 423),
+		)
+	}
+
 	const isMatch = await user.matchPassword(password)
 
 	if (!isMatch) {
+		await user.incrementLoginAttempts()
 		return next(new ErrorResponse("Email yoki parol noto'g'ri", 401))
 	}
+
+	await user.resetLoginAttempts()
+
+	const refreshToken = user.getRefreshToken()
+	user.refreshToken = refreshToken
+	await user.save()
 
 	sendTokenResponse(user, 200, res)
 })
 
-// @desc    Logout user / clear cookie
-// @route   GET /api/v1/auth/logout
-// @access  Private
+// @desc    Logout
+// @route   POST /api/v1/auth/logout
 exports.logout = asyncHandler(async (req, res, next) => {
+	await User.update({ refreshToken: null }, { where: { id: req.user.id } })
+
 	res.cookie('token', 'none', {
 		expires: new Date(Date.now() + 10 * 1000),
 		httpOnly: true,
@@ -59,55 +81,75 @@ exports.logout = asyncHandler(async (req, res, next) => {
 
 	res.status(200).json({
 		success: true,
-		data: {},
+		message: 'Tizimdan muvaffaqiyatli chiqdingiz',
 	})
 })
 
-// @desc    Get current logged in user
+// @desc    Get me
 // @route   GET /api/v1/auth/me
-// @access  Private
 exports.getMe = asyncHandler(async (req, res, next) => {
-	const user = await User.findById(req.user.id)
-
-	res.status(200).json({
-		success: true,
-		data: user,
-	})
+	const user = await User.findByPk(req.user.id)
+	res.status(200).json({ success: true, data: user })
 })
 
-// @desc    Update user details
-// @route   PUT /api/v1/auth/updatedetails
-// @access  Private
+// @desc    Update details
+// @route   PUT /api/v1/auth/update-details
 exports.updateDetails = asyncHandler(async (req, res, next) => {
-	const fieldsToUpdate = {
-		name: req.body.name,
-		email: req.body.email,
-	}
+	const fieldsToUpdate = {}
+	if (req.body.name) fieldsToUpdate.name = req.body.name
+	if (req.body.email) fieldsToUpdate.email = req.body.email
+	if (req.body.avatar) fieldsToUpdate.avatar = req.body.avatar
 
-	const user = await User.findByIdAndUpdate(req.user.id, fieldsToUpdate, {
-		new: true,
-		runValidators: true,
-	})
+	await User.update(fieldsToUpdate, { where: { id: req.user.id } })
+	const user = await User.findByPk(req.user.id)
 
-	res.status(200).json({
-		success: true,
-		data: user,
-	})
+	res.status(200).json({ success: true, data: user })
 })
 
 // @desc    Update password
-// @route   PUT /api/v1/auth/updatepassword
-// @access  Private
+// @route   PUT /api/v1/auth/update-password
 exports.updatePassword = asyncHandler(async (req, res, next) => {
-	const user = await User.findById(req.user.id).select('+password')
+	const user = await User.scope('withPassword').findByPk(req.user.id)
 
-	// Hozirgi parolni tekshirish
 	if (!(await user.matchPassword(req.body.currentPassword))) {
-		return next(new ErrorResponse("Parol noto'g'ri", 401))
+		return next(new ErrorResponse("Joriy parol noto'g'ri", 401))
 	}
 
 	user.password = req.body.newPassword
 	await user.save()
 
 	sendTokenResponse(user, 200, res)
+})
+
+// @desc    Refresh token
+// @route   POST /api/v1/auth/refresh-token
+exports.refreshToken = asyncHandler(async (req, res, next) => {
+	const { refreshToken } = req.body
+
+	if (!refreshToken) {
+		return next(new ErrorResponse('Refresh token kiritish majburiy', 400))
+	}
+
+	const jwt = require('jsonwebtoken')
+
+	try {
+		const decoded = jwt.verify(
+			refreshToken,
+			process.env.JWT_REFRESH_SECRET || process.env.JWT_SECRET,
+		)
+
+		const user = await User.scope('withPassword').findByPk(decoded.id)
+
+		if (!user || user.refreshToken !== refreshToken) {
+			return next(new ErrorResponse('Refresh token yaroqsiz', 401))
+		}
+
+		const newRefreshToken = user.getRefreshToken()
+		user.refreshToken = newRefreshToken
+		await user.save()
+
+		sendTokenResponse(user, 200, res)
+	} catch (err) {
+		return next(new ErrorResponse("Refresh token yaroqsiz yoki muddati o'tgan", 401))
+	}
 })

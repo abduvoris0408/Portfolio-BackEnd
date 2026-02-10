@@ -1,63 +1,114 @@
 const express = require('express')
+const helmet = require('helmet')
+const cors = require('cors')
+const rateLimit = require('express-rate-limit')
+const cookieParser = require('cookie-parser')
+
 const config = require('./config/env.config')
 const logger = require('./utils/logger')
-const connectDB = require('./config/db.config')
+const { sequelize } = require('./models')
+const { connectDB } = require('./config/db.config')
+const errorHandler = require('./middleware/errorHandler')
+const seedAdmin = require('./data/seed')
 
 const app = express()
-const cookieParser = require('cookie-parser')
-// Middleware
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-app.use(cookieParser())
-// CORS middleware (kerak bo'lsa)
-app.use((req, res, next) => {
-	res.header('Access-Control-Allow-Origin', config.cors.origin)
-	res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH')
-	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization')
-	res.header('Access-Control-Allow-Credentials', config.cors.credentials)
 
-	if (req.method === 'OPTIONS') {
-		return res.sendStatus(200)
-	}
-	next()
+// ===== Security Middleware =====
+app.use(helmet())
+
+app.use(cors({
+	origin: config.cors.origin,
+	credentials: config.cors.credentials,
+	methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+	allowedHeaders: ['Content-Type', 'Authorization'],
+}))
+
+// Rate limiting – umumiy
+const limiter = rateLimit({
+	windowMs: config.rateLimit.windowMs,
+	max: config.rateLimit.max,
+	message: {
+		success: false,
+		message: "Ko'p so'rov yuborildi. Biroz kuting.",
+	},
+	standardHeaders: true,
+	legacyHeaders: false,
+})
+app.use('/api', limiter)
+
+// Auth uchun qattiqroq rate limit
+const authLimiter = rateLimit({
+	windowMs: 15 * 60 * 1000, // 15 daqiqa
+	max: 10, // 10 ta urinish
+	message: {
+		success: false,
+		message: "Ko'p login urinishi. 15 daqiqadan keyin urinib ko'ring.",
+	},
+	standardHeaders: true,
+	legacyHeaders: false,
 })
 
-// Routes
+// PostgreSQL parameterized queries orqali SQL injection himoyalangan
+
+// ===== Body Parser Middleware =====
+app.use(express.json({ limit: '10mb' }))
+app.use(express.urlencoded({ extended: true, limit: '10mb' }))
+app.use(cookieParser())
+
+// ===== Request Logging (Development) =====
+if (config.nodeEnv === 'development') {
+	const morgan = require('morgan')
+	app.use(morgan('dev'))
+}
+
+// ===== Root & Health =====
 app.get('/', (req, res) => {
 	res.json({
 		message: 'Portfolio API ishlamoqda!',
 		version: config.api.version,
 		status: 'active',
+		documentation: '/api-docs',
 	})
 })
 
-// Health check endpoint
 app.get('/health', (req, res) => {
 	res.json({
 		status: 'OK',
 		timestamp: new Date().toISOString(),
 		uptime: process.uptime(),
+		environment: config.nodeEnv,
 	})
 })
 
-// API routes (keyinchalik qo'shiladi)
-// app.use(`${config.api.prefix}/${config.api.version}/projects`, projectRoutes)
-// app.use(`${config.api.prefix}/${config.api.version}/skills`, skillRoutes)
-const authRoutes = require('./routes/auth.routes')
-const userRoutes = require('./routes/user.routes')
-const projectRoutes = require('./routes/project.routes')
-const skillRoutes = require('./routes/skill.routes')
-const categoryRoutes = require('./routes/category.routes')
-const swaggerDocs = require('./config/swagger.config')
+// ===== API Routes =====
+const apiPrefix = `${config.api.prefix}/${config.api.version}`
 
-// Mount routes
-app.use(`${config.api.prefix}/${config.api.version}/auth`, authRoutes)
-app.use(`${config.api.prefix}/${config.api.version}/users`, userRoutes)
-app.use(`${config.api.prefix}/${config.api.version}/projects`, projectRoutes)
-app.use(`${config.api.prefix}/${config.api.version}/skills`, skillRoutes)
-app.use(`${config.api.prefix}/${config.api.version}/categories`, categoryRoutes)
+// Auth (with stricter rate limit)
+app.use(`${apiPrefix}/auth`, authLimiter, require('./routes/auth.routes'))
+
+// Content routes
+app.use(`${apiPrefix}/about`, require('./routes/about.routes'))
+app.use(`${apiPrefix}/categories`, require('./routes/category.routes'))
+app.use(`${apiPrefix}/services`, require('./routes/service.routes'))
+app.use(`${apiPrefix}/service-details`, require('./routes/serviceDetail.routes'))
+app.use(`${apiPrefix}/projects`, require('./routes/project.routes'))
+app.use(`${apiPrefix}/skills`, require('./routes/skill.routes'))
+app.use(`${apiPrefix}/blog-posts`, require('./routes/blogPost.routes'))
+app.use(`${apiPrefix}/blog-comments`, require('./routes/blogComment.routes'))
+app.use(`${apiPrefix}/blog-ratings`, require('./routes/blogRating.routes'))
+app.use(`${apiPrefix}/news`, require('./routes/news.routes'))
+app.use(`${apiPrefix}/tags`, require('./routes/tag.routes'))
+app.use(`${apiPrefix}/experiences`, require('./routes/experience.routes'))
+app.use(`${apiPrefix}/education`, require('./routes/education.routes'))
+app.use(`${apiPrefix}/contacts`, require('./routes/contact.routes'))
+app.use(`${apiPrefix}/testimonials`, require('./routes/testimonial.routes'))
+app.use(`${apiPrefix}/faqs`, require('./routes/faq.routes'))
+app.use(`${apiPrefix}/partners`, require('./routes/partner.routes'))
+app.use(`${apiPrefix}/consultations`, require('./routes/consultation.routes'))
+app.use(`${apiPrefix}/achievements`, require('./routes/achievement.routes'))
+app.use(`${apiPrefix}/dashboard`, require('./routes/dashboard.routes'))
+
 // 404 handler
-swaggerDocs(app)
 app.use((req, res) => {
 	res.status(404).json({
 		success: false,
@@ -67,27 +118,27 @@ app.use((req, res) => {
 })
 
 // Error handler
-app.use((err, req, res, next) => {
-	logger.error(`Error: ${err.message}`)
-	res.status(err.status || 500).json({
-		success: false,
-		message: err.message || 'Server xatosi',
-		...(config.nodeEnv === 'development' && { stack: err.stack }),
-	})
-})
+app.use(errorHandler)
 
-// Server va Database ishga tushirish
+// ===== Server va Database =====
 const startServer = async () => {
 	try {
-		// MongoDB'ga ulanish
+		// PostgreSQL ulanish
 		await connectDB()
 
-		// Serverni ishga tushirish
+		// Jadvallarni yaratish/yangilash
+		await sequelize.sync({ alter: true })
+		logger.info('📋 Jadvallar sinxronlashtirildi!')
+
+		// Admin seed
+		await seedAdmin()
+
 		const PORT = config.port
 		app.listen(PORT, () => {
 			logger.info(`🚀 Server ishga tushdi: http://localhost:${PORT}`)
-			logger.info(`📚 API: http://localhost:${PORT}${config.api.prefix}`)
+			logger.info(`📚 API: http://localhost:${PORT}${apiPrefix}`)
 			logger.info(`🌍 Environment: ${config.nodeEnv}`)
+			logger.info(`🐘 Database: PostgreSQL (${process.env.DB_NAME})`)
 		})
 	} catch (error) {
 		logger.error(`Server ishga tushmadi: ${error.message}`)
@@ -104,6 +155,11 @@ process.on('SIGTERM', () => {
 process.on('SIGINT', () => {
 	logger.info('SIGINT signal qabul qilindi, server yopilmoqda...')
 	process.exit(0)
+})
+
+process.on('unhandledRejection', (err) => {
+	logger.error(`Unhandled Rejection: ${err.message}`)
+	process.exit(1)
 })
 
 startServer()

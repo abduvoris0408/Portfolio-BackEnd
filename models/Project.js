@@ -1,69 +1,88 @@
-const mongoose = require('mongoose')
+const { DataTypes } = require('sequelize')
+const { sequelize } = require('../config/db.config')
+const slugify = require('../utils/slugify')
 
-const ProjectSchema = new mongoose.Schema(
-	{
-		title: {
-			type: String,
-			required: [true, 'Loyiha nomi kiritish majburiy'],
-			trim: true,
-			maxlength: [100, 'Loyiha nomi 100 ta belgidan oshmasligi kerak'],
-		},
-		description: {
-			type: String,
-			required: [true, 'Tavsif kiritish majburiy'],
-			maxlength: [2000, 'Tavsif 2000 ta belgidan oshmasligi kerak'],
-		},
-		image: {
-			type: String,
-			default: 'default-project.jpg',
-		},
-		technologies: [
-			{
-				type: String,
-				trim: true,
-			},
-		],
-		liveUrl: {
-			type: String,
-			trim: true,
-		},
-		githubUrl: {
-			type: String,
-			trim: true,
-		},
-		category: {
-			type: mongoose.Schema.Types.ObjectId,
-			ref: 'Category',
-			required: [true, 'Kategoriya tanlash majburiy'],
-		},
-		user: {
-			type: mongoose.Schema.Types.ObjectId,
-			ref: 'User',
-			required: true,
-		},
-		status: {
-			type: String,
-			enum: ['draft', 'published', 'archived'],
-			default: 'published',
-		},
-		featured: {
-			type: Boolean,
-			default: false,
-		},
-		views: {
-			type: Number,
-			default: 0,
+const Project = sequelize.define('projects', {
+	id: {
+		type: DataTypes.UUID,
+		defaultValue: DataTypes.UUIDV4,
+		primaryKey: true,
+	},
+	title: {
+		type: DataTypes.STRING(200),
+		allowNull: false,
+		validate: { notEmpty: { msg: 'Loyiha nomi kiritish majburiy' } },
+	},
+	slug: {
+		type: DataTypes.STRING(250),
+		unique: true,
+	},
+	shortDescription: {
+		type: DataTypes.STRING(500),
+		defaultValue: '',
+		field: 'short_description',
+	},
+	description: {
+		type: DataTypes.TEXT,
+		allowNull: false,
+	},
+	image: {
+		type: DataTypes.JSONB,
+		defaultValue: null,
+		comment: '{ url, publicId }',
+	},
+	gallery: {
+		type: DataTypes.JSONB,
+		defaultValue: [],
+		comment: '[{ url, publicId }, ...]',
+	},
+	clientUrl: {
+		type: DataTypes.STRING(500),
+		defaultValue: '',
+		field: 'client_url',
+		comment: 'Mijoz saytiga havola',
+	},
+	categoryId: {
+		type: DataTypes.UUID,
+		field: 'category_id',
+		references: { model: 'categories', key: 'id' },
+	},
+	status: {
+		type: DataTypes.ENUM('published', 'draft', 'archived'),
+		defaultValue: 'draft',
+	},
+	isFeatured: {
+		type: DataTypes.BOOLEAN,
+		defaultValue: false,
+		field: 'is_featured',
+	},
+	views: {
+		type: DataTypes.INTEGER,
+		defaultValue: 0,
+	},
+	order: {
+		type: DataTypes.INTEGER,
+		defaultValue: 0,
+	},
+	completedAt: {
+		type: DataTypes.DATEONLY,
+		field: 'completed_at',
+	},
+}, {
+	tableName: 'projects',
+	indexes: [
+		{ fields: ['slug'] },
+		{ fields: ['status'] },
+		{ fields: ['category_id'] },
+		{ fields: ['order'] },
+	],
+	hooks: {
+		beforeValidate: (project) => {
+			if (project.title && (project.isNewRecord || project.changed('title'))) {
+				project.slug = slugify(project.title)
+			}
 		},
 	},
-	{
-		timestamps: true,
-		toJSON: { virtuals: true },
-		toObject: { virtuals: true },
-	},
-)
+})
 
-// Index (qidiruv tezligi uchun)
-ProjectSchema.index({ title: 'text', description: 'text' })
-ProjectSchema.index({ user: 1, createdAt: -1 })
-
-module.exports = mongoose.model('Project', ProjectSchema)
+module.exports = Project

@@ -12,14 +12,11 @@ exports.protect = asyncHandler(async (req, res, next) => {
 		req.headers.authorization &&
 		req.headers.authorization.startsWith('Bearer')
 	) {
-		// Bearer token
 		token = req.headers.authorization.split(' ')[1]
-	} else if (req.cookies.token) {
-		// Cookie'dan token
+	} else if (req.cookies && req.cookies.token) {
 		token = req.cookies.token
 	}
 
-	// Token mavjudligini tekshirish
 	if (!token) {
 		return next(
 			new ErrorResponse("Ushbu route'ga kirish uchun login qiling", 401),
@@ -27,11 +24,10 @@ exports.protect = asyncHandler(async (req, res, next) => {
 	}
 
 	try {
-		// Token'ni verify qilish
 		const decoded = jwt.verify(token, process.env.JWT_SECRET)
 
-		// User'ni topish
-		req.user = await User.findById(decoded.id)
+		// Sequelize – findByPk
+		req.user = await User.findByPk(decoded.id)
 
 		if (!req.user) {
 			return next(new ErrorResponse('User topilmadi', 404))
@@ -45,7 +41,7 @@ exports.protect = asyncHandler(async (req, res, next) => {
 	}
 })
 
-// Role tekshirish - faqat admin uchun
+// Role tekshirish
 exports.authorize = (...roles) => {
 	return (req, res, next) => {
 		if (!roles.includes(req.user.role)) {

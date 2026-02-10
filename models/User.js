@@ -1,84 +1,125 @@
-const mongoose = require('mongoose')
+const { DataTypes } = require('sequelize')
+const { sequelize } = require('../config/db.config')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
-const UserSchema = new mongoose.Schema(
-	{
-		name: {
-			type: String,
-			required: [true, 'Ism kiritish majburiy'],
-			trim: true,
-			minlength: [2, "Ism kamida 2 ta belgidan iborat bo'lishi kerak"],
-			maxlength: [50, 'Ism 50 ta belgidan oshmasligi kerak'],
-		},
-		email: {
-			type: String,
-			required: [true, 'Email kiritish majburiy'],
-			unique: true,
-			lowercase: true,
-			trim: true,
-			match: [
-				/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-				"Email formati noto'g'ri",
-			],
-		},
-		password: {
-			type: String,
-			required: [true, 'Parol kiritish majburiy'],
-			minlength: [6, "Parol kamida 6 ta belgidan iborat bo'lishi kerak"],
-			select: false, // Password default ravishda qaytarilmaydi
-		},
-		role: {
-			type: String,
-			enum: ['user', 'admin'],
-			default: 'user',
-		},
-		avatar: {
-			type: String,
-			default: 'default-avatar.jpg',
-		},
-		bio: {
-			type: String,
-			maxlength: [500, 'Bio 500 ta belgidan oshmasligi kerak'],
-		},
-		resetPasswordToken: String,
-		resetPasswordExpire: Date,
+const User = sequelize.define('users', {
+	id: {
+		type: DataTypes.UUID,
+		defaultValue: DataTypes.UUIDV4,
+		primaryKey: true,
 	},
-	{
-		timestamps: true,
-		toJSON: { virtuals: true },
-		toObject: { virtuals: true },
+	name: {
+		type: DataTypes.STRING(100),
+		allowNull: false,
+		validate: {
+			notEmpty: { msg: "Ism kiritish majburiy" },
+			len: { args: [2, 100], msg: "Ism 2-100 belgi orasida bo'lishi kerak" },
+		},
 	},
-)
-
-// Virtual - User'ning projectlari
-UserSchema.virtual('projects', {
-	ref: 'Project',
-	localField: '_id',
-	foreignField: 'user',
-	justOne: false,
+	email: {
+		type: DataTypes.STRING(100),
+		allowNull: false,
+		unique: { msg: "Bu email allaqachon ro'yxatdan o'tgan" },
+		validate: {
+			isEmail: { msg: "Email formati noto'g'ri" },
+		},
+	},
+	password: {
+		type: DataTypes.STRING,
+		allowNull: false,
+		validate: {
+			len: { args: [6, 100], msg: "Parol kamida 6 ta belgidan iborat bo'lishi kerak" },
+		},
+	},
+	role: {
+		type: DataTypes.ENUM('admin'),
+		defaultValue: 'admin',
+	},
+	avatar: {
+		type: DataTypes.STRING(500),
+		defaultValue: '',
+	},
+	refreshToken: {
+		type: DataTypes.TEXT,
+		field: 'refresh_token',
+	},
+	loginAttempts: {
+		type: DataTypes.INTEGER,
+		defaultValue: 0,
+		field: 'login_attempts',
+	},
+	lockUntil: {
+		type: DataTypes.DATE,
+		field: 'lock_until',
+	},
+	lastLogin: {
+		type: DataTypes.DATE,
+		field: 'last_login',
+	},
+}, {
+	hooks: {
+		beforeCreate: async (user) => {
+			if (user.password) {
+				const salt = await bcrypt.genSalt(12)
+				user.password = await bcrypt.hash(user.password, salt)
+			}
+		},
+		beforeUpdate: async (user) => {
+			if (user.changed('password')) {
+				const salt = await bcrypt.genSalt(12)
+				user.password = await bcrypt.hash(user.password, salt)
+			}
+		},
+	},
+	defaultScope: {
+		attributes: { exclude: ['password', 'refreshToken', 'loginAttempts', 'lockUntil'] },
+	},
+	scopes: {
+		withPassword: { attributes: {} },
+	},
 })
 
-// Password hash qilish (save qilishdan oldin)
-UserSchema.pre('save', async function (next) {
-	if (!this.isModified('password')) {
-		next()
-	}
-
-	const salt = await bcrypt.genSalt(10)
-	this.password = await bcrypt.hash(this.password, salt)
-})
-
-// Parolni tekshirish
-UserSchema.methods.matchPassword = async function (enteredPassword) {
+// Instance methods
+User.prototype.matchPassword = async function (enteredPassword) {
 	return await bcrypt.compare(enteredPassword, this.password)
 }
 
-// JWT Token yaratish
-UserSchema.methods.getSignedJwtToken = function () {
-	return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
-		expiresIn: process.env.JWT_EXPIRE,
+User.prototype.getSignedJwtToken = function () {
+	return jwt.sign({ id: this.id }, process.env.JWT_SECRET, {
+		expiresIn: process.env.JWT_EXPIRE || '1d',
 	})
 }
 
-module.exports = mongoose.model('User', UserSchema)
+User.prototype.getRefreshToken = function () {
+	return jwt.sign({ id: this.id }, process.env.JWT_REFRESH_SECRET || process.env.JWT_SECRET, {
+		expiresIn: process.env.JWT_REFRESH_EXPIRE || '30d',
+	})
+}
+
+User.prototype.incrementLoginAttempts = async function () {
+	const MAX_ATTEMPTS = 5
+	const LOCK_TIME = 30 * 60 * 1000 // 30 daqiqa
+
+	this.loginAttempts += 1
+	if (this.loginAttempts >= MAX_ATTEMPTS) {
+		this.lockUntil = new Date(Date.now() + LOCK_TIME)
+	}
+	await this.save()
+}
+
+User.prototype.resetLoginAttempts = async function () {
+	this.loginAttempts = 0
+	this.lockUntil = null
+	this.lastLogin = new Date()
+	await this.save()
+}
+
+// Virtual getter
+Object.defineProperty(User.prototype, 'isLocked', {
+	get() {
+		return this.lockUntil && this.lockUntil > Date.now()
+	},
+})
+
+module.exports = User

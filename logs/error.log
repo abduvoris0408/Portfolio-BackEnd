@@ -5,3 +5,537 @@
 2026-01-31 17:16:28 [ERROR]: Error: Token yaroqsiz yoki muddati o'tgan
 2026-01-31 17:16:29 [ERROR]: Error: Token yaroqsiz yoki muddati o'tgan
 2026-01-31 17:16:30 [ERROR]: Error: Token yaroqsiz yoki muddati o'tgan
+2026-02-07 16:52:47 [ERROR]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+2026-02-07 16:52:48 [ERROR]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+2026-02-07 16:52:58 [ERROR]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+2026-02-07 16:52:58 [ERROR]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+2026-02-07 16:52:59 [ERROR]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+2026-02-07 16:52:59 [ERROR]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+2026-02-07 16:52:59 [ERROR]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+2026-02-07 16:52:59 [ERROR]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+2026-02-07 16:52:59 [ERROR]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+2026-02-07 16:52:59 [ERROR]: TypeError: Cannot set property query of #<IncomingMessage> which has only a getter
+2026-02-07 17:11:05 [ERROR]: Error: Email yoki parol noto'g'ri
+2026-02-07 17:11:14 [ERROR]: Error: Email yoki parol noto'g'ri
+2026-02-07 17:11:16 [ERROR]: Error: Email yoki parol noto'g'ri
+2026-02-07 17:19:33 [ERROR]: Error: Email yoki parol noto'g'ri
+2026-02-07 17:19:39 [ERROR]: Error: Email yoki parol noto'g'ri
+2026-02-07 17:19:42 [ERROR]: Error: Email yoki parol noto'g'ri
+2026-02-07 17:19:43 [ERROR]: Error: Email yoki parol noto'g'ri
+2026-02-07 17:22:44 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:22:45 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:22:54 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:22:55 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:23:03 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:23:04 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:23:09 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:23:10 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:23:11 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:23:11 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:23:12 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:23:12 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:23:14 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:23:15 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:23:44 [ERROR]: TypeError: next is not a function
+2026-02-07 17:23:48 [ERROR]: TypeError: next is not a function
+2026-02-07 17:23:53 [ERROR]: TypeError: next is not a function
+2026-02-07 17:24:23 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:24:23 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:24:24 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:24:24 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:24:32 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:24:34 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:24:49 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:24:49 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:24:50 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:24:50 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:24:58 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:24:59 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:25:42 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:25:43 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:26:19 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:26:59 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:27:00 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:27:09 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:27:10 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:31:47 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:32:55 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:32:56 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:33:01 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:33:01 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:33:03 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:33:03 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:33:43 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:33:43 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:33:44 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:33:44 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:34:36 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:34:37 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:34:37 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:34:39 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:34:40 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:34:41 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:35:22 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:35:23 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:38:03 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:38:04 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:38:29 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:45:37 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:45:38 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:49:28 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:49:29 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:49:30 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:49:56 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:49:58 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:51:54 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:51:55 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:52:42 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:52:43 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:52:55 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:52:56 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:52:57 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:52:59 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:54:58 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:54:59 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:55:19 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:55:20 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:56:01 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:56:03 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:56:14 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:56:15 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:57:13 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-07 17:57:15 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:07:53 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:07:55 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:08:37 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:08:37 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:08:38 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:09:01 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:09:02 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:09:04 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:09:05 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:09:12 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:09:12 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:09:13 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:09:13 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:10:30 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:10:31 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:11:35 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:11:36 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:12:19 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:12:19 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:12:20 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:12:20 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:12:59 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:13:00 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:14:24 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:14:26 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:14:27 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:14:28 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:14:38 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:14:38 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:14:39 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:14:39 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:14:41 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:14:42 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:22:57 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:22:59 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:24:05 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:24:05 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:24:06 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:24:06 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:24:12 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:24:14 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:24:41 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:24:42 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:24:59 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:24:59 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:25:01 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:25:01 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:27:14 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:27:14 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:27:15 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:27:15 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:28:27 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:28:27 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:28:28 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:28:28 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:31:31 [ERROR]: MongoServerError: E11000 duplicate key error collection: portfolio.skills index: name_1 dup key: { name: "Distance Student" }
+2026-02-09 11:32:20 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:32:21 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:32:24 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:32:24 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:32:25 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:32:25 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:32:51 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:32:52 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:32:58 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:32:58 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:32:59 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:32:59 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:38:01 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:38:02 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:39:52 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:39:53 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:41:42 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:41:42 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:41:43 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:42:11 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:42:12 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:42:23 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:42:24 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:42:49 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:42:50 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:43:07 [ERROR]: TypeError: next is not a function
+2026-02-09 11:43:13 [ERROR]: TypeError: next is not a function
+2026-02-09 11:43:53 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:43:55 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:44:02 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:44:02 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:44:03 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:45:02 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:45:03 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:46:16 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:46:16 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:46:17 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:46:17 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:54:18 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:54:20 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:54:21 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:54:21 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:54:22 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:54:22 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:55:48 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 11:55:49 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 12:23:17 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:00:38 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:00:38 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:00:39 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:00:43 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:00:44 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:14:11 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:14:11 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:14:13 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:14:13 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:14:15 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:14:16 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:14:17 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:14:17 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:14:18 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:14:18 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:15:00 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 13:15:01 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 16:12:26 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 16:12:28 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 16:13:09 [ERROR]: TypeError: next is not a function
+2026-02-09 16:13:21 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 16:13:22 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 16:15:31 [ERROR]: TypeError: next is not a function
+2026-02-09 16:15:56 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 16:15:57 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 16:16:06 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 16:16:06 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 16:16:07 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 16:16:07 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 16:38:41 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 16:38:41 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 16:38:42 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 16:38:42 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:00:49 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:00:50 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:01:03 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:01:03 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:01:04 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:01:04 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:46:24 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:46:25 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:46:28 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:46:28 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:46:29 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:46:31 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:46:32 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:49:08 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:49:09 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:49:09 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:49:09 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:49:11 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:49:11 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:49:12 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:49:12 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:49:12 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:49:12 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:49:14 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-09 17:49:14 [ERROR]: Error: user roli ushbu route'ga kira olmaydi
+2026-02-10 11:14:54 [ERROR]: Error: Token yaroqsiz yoki muddati o'tgan
+2026-02-10 11:15:44 [ERROR]: Error: Cannot find module '../document'
+Require stack:
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\objectId.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\config\db.config.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\app.js
+2026-02-10 11:17:38 [ERROR]: Error: Cannot find module '../document'
+Require stack:
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\objectId.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\config\db.config.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\app.js
+2026-02-10 11:21:13 [ERROR]: Error: Cannot find module '../document'
+Require stack:
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\objectId.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\config\db.config.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\app.js
+2026-02-10 11:21:45 [ERROR]: Error: Cannot find module '../document'
+Require stack:
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\objectId.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\config\db.config.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\app.js
+2026-02-10 11:21:46 [ERROR]: Error: Cannot find module '../document'
+Require stack:
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\objectId.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\config\db.config.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\app.js
+2026-02-10 11:21:48 [ERROR]: Error: Cannot find module '../document'
+Require stack:
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\objectId.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\config\db.config.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\app.js
+2026-02-10 11:21:48 [ERROR]: Error: Cannot find module '../document'
+Require stack:
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\objectId.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\config\db.config.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\app.js
+2026-02-10 11:23:07 [ERROR]: Error: Cannot find module '../document'
+Require stack:
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\objectId.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\config\db.config.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\app.js
+2026-02-10 11:23:09 [ERROR]: Error: Cannot find module '../document'
+Require stack:
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\objectId.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\config\db.config.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\app.js
+2026-02-10 11:23:10 [ERROR]: Error: Cannot find module '../document'
+Require stack:
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\objectId.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\config\db.config.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\app.js
+2026-02-10 11:34:50 [ERROR]: Error: Cannot find module '../document'
+Require stack:
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\objectId.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\config\db.config.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\app.js
+2026-02-10 11:38:24 [ERROR]: Error: Cannot find module '../document'
+Require stack:
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\objectId.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\config\db.config.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\app.js
+2026-02-10 11:54:10 [ERROR]: Error: Cannot find module '../document'
+Require stack:
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\objectId.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\config\db.config.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\app.js
+2026-02-10 11:54:57 [ERROR]: Error: Cannot find module '../document'
+Require stack:
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\objectId.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\schema.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\drivers\node-mongodb-native\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\lib\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\node_modules\mongoose\index.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\config\db.config.js
+- C:\Users\bakir\OneDrive\Desktop\Portfolio API node js\app.js
+2026-02-10 11:56:49 [ERROR]: Error: Kategoriya turi kiritish majburiy
+2026-02-10 11:56:57 [ERROR]: Error: Kategoriya turi kiritish majburiy
+2026-02-10 11:57:59 [ERROR]: Error: Kategoriya turi kiritish majburiy
+2026-02-10 12:25:40 [ERROR]: Error: Kategoriya turi kiritish majburiy
+2026-02-10 12:31:04 [ERROR]: Error: "category" is required
+2026-02-10 13:29:47 [ERROR]: Error: "category" is required
+2026-02-10 13:33:43 [ERROR]: Error: Noto'g'ri ID format
+2026-02-10 13:33:48 [ERROR]: Error: Noto'g'ri ID format
+2026-02-10 13:35:48 [ERROR]: Error: Noto'g'ri ID format
+2026-02-10 13:54:22 [ERROR]: Error: Avval about ma'lumotlarini yarating
+2026-02-10 13:55:05 [ERROR]: Error: "birthday" must be in ISO 8601 date format
+2026-02-10 15:43:20 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:43:26 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:43:34 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:43:40 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:43:45 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:43:50 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:43:55 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:43:58 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:44:24 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:44:29 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:44:37 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:44:43 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:44:45 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:45:20 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:45:26 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:45:33 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:45:42 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:45:50 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:45:52 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:46:07 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:46:10 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:46:14 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:46:17 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:46:19 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:47:07 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:47:09 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:48:38 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:48:51 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:49:00 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:49:08 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:49:16 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:49:24 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:49:26 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:49:59 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:50:04 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:50:07 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:50:10 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:50:13 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:50:17 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:50:19 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:50:49 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 15:51:05 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 16:24:32 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 16:25:46 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 16:25:52 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 16:26:06 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 16:26:15 [ERROR]: Server ishga tushmadi: column "image" cannot be cast automatically to type jsonb
+2026-02-10 16:28:24 [ERROR]: Server ishga tushmadi: syntax error at or near "USING"
+2026-02-10 16:28:56 [ERROR]: Server ishga tushmadi: syntax error at or near "USING"
+2026-02-10 16:29:18 [ERROR]: Server ishga tushmadi: syntax error at or near "USING"
+2026-02-10 16:29:56 [ERROR]: Server ishga tushmadi: invalid input syntax for type json
+2026-02-10 16:30:01 [ERROR]: Server ishga tushmadi: invalid input syntax for type json
+2026-02-10 16:31:03 [ERROR]: Server ishga tushmadi: invalid input syntax for type json
+2026-02-10 16:32:56 [ERROR]: Server ishga tushmadi: syntax error at or near "USING"
+2026-02-10 16:33:01 [ERROR]: Server ishga tushmadi: syntax error at or near "USING"
+2026-02-10 16:33:15 [ERROR]: Server ishga tushmadi: syntax error at or near "USING"
+2026-02-10 16:33:44 [ERROR]: Server ishga tushmadi: syntax error at or near "USING"
+2026-02-10 16:34:03 [ERROR]: Server ishga tushmadi: syntax error at or near "USING"
+2026-02-10 16:35:14 [ERROR]: Server ishga tushmadi: syntax error at or near "USING"
+2026-02-10 16:35:35 [ERROR]: Server ishga tushmadi: syntax error at or near "USING"
+2026-02-10 16:36:03 [ERROR]: Server ishga tushmadi: syntax error at or near "USING"
+2026-02-10 16:36:10 [ERROR]: Server ishga tushmadi: syntax error at or near "USING"
+2026-02-10 17:06:32 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 17:06:37 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 17:06:43 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 17:19:46 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 17:19:59 [ERROR]: Error: "category" is required
+2026-02-10 18:00:25 [ERROR]: Error: "service" is required
+2026-02-10 18:00:32 [ERROR]: Error: "service" is required
+2026-02-10 18:00:48 [ERROR]: Error: "service" is required
+2026-02-10 18:09:29 [ERROR]: Error: Noto'g'ri ID format
+2026-02-10 18:09:35 [ERROR]: Error: Noto'g'ri ID format
+2026-02-10 18:12:51 [ERROR]: Error: Noto'g'ri ID format
+2026-02-10 18:13:29 [ERROR]: Error: "description" is required
+2026-02-10 18:14:16 [ERROR]: Error: Noto'g'ri ID format
+2026-02-10 18:26:06 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 18:26:18 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 18:29:49 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 18:29:50 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 18:29:51 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 18:29:51 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 18:29:51 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 18:32:40 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 18:34:25 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 18:55:06 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 18:58:06 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 18:58:07 [ERROR]: Error: "category" is required, Noto'g'ri ID format
+2026-02-10 19:06:24 [ERROR]: Error: "category" is required
+2026-02-10 19:06:25 [ERROR]: Error: "category" is required
+2026-02-10 19:06:25 [ERROR]: Error: "category" is required
+2026-02-10 19:06:25 [ERROR]: Error: "category" is required
+2026-02-10 19:06:25 [ERROR]: Error: "category" is required
+2026-02-10 19:06:55 [ERROR]: Error: "category" is required
