@@ -136,6 +136,11 @@ exports.deleteImage = asyncHandler(async (req, res, next) => {
     const post = await BlogPost.findByPk(req.params.id)
     if (!post) return next(new ErrorResponse('Maqola topilmadi', 404))
     if (post.image?.publicId) await deleteFromCloudinary(post.image.publicId)
-    await post.update({ image: null })
+
+    post.image = null
+    post.changed('image', true)
+    await post.save()
+    await post.reload()
+
     res.status(200).json({ success: true, message: "Rasm o'chirildi", data: post })
 })

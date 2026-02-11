@@ -99,6 +99,11 @@ exports.deleteImage = asyncHandler(async (req, res, next) => {
     const news = await News.findByPk(req.params.id)
     if (!news) return next(new ErrorResponse('Yangilik topilmadi', 404))
     if (news.image?.publicId) await deleteFromCloudinary(news.image.publicId)
-    await news.update({ image: null })
+
+    news.image = null
+    news.changed('image', true)
+    await news.save()
+    await news.reload()
+
     res.status(200).json({ success: true, message: "Rasm o'chirildi", data: news })
 })

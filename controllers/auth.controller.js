@@ -92,13 +92,60 @@ exports.getMe = asyncHandler(async (req, res, next) => {
 	res.status(200).json({ success: true, data: user })
 })
 
+const {
+	uploadToCloudinary,
+	deleteFromCloudinary,
+} = require('../config/cloudinary.config')
+
+// ... (existing code)
+
+// @desc    Upload avatar
+// @route   PUT /api/v1/auth/avatar
+exports.uploadAvatar = asyncHandler(async (req, res, next) => {
+	if (!req.file) return next(new ErrorResponse('Rasm fayli yuklang', 400))
+
+	const user = await User.findByPk(req.user.id)
+
+	if (user.avatar && user.avatar.publicId) {
+		await deleteFromCloudinary(user.avatar.publicId)
+	}
+
+	// Multer CloudinaryStorage ishlatilgani uchun rasm allaqachon yuklangan
+	const result = {
+		url: req.file.path,
+		publicId: req.file.filename,
+	}
+
+	user.avatar = result
+	user.changed('avatar', true)
+	await user.save()
+
+	res.status(200).json({ success: true, message: 'Avatar yuklandi', data: user })
+})
+
+// @desc    Delete avatar
+// @route   DELETE /api/v1/auth/avatar
+exports.deleteAvatar = asyncHandler(async (req, res, next) => {
+	const user = await User.findByPk(req.user.id)
+
+	if (user.avatar && user.avatar.publicId) {
+		await deleteFromCloudinary(user.avatar.publicId)
+	}
+
+	user.avatar = null
+	user.changed('avatar', true)
+	await user.save()
+
+	res.status(200).json({ success: true, message: "Avatar o'chirildi", data: user })
+})
+
 // @desc    Update details
 // @route   PUT /api/v1/auth/update-details
 exports.updateDetails = asyncHandler(async (req, res, next) => {
 	const fieldsToUpdate = {}
 	if (req.body.name) fieldsToUpdate.name = req.body.name
 	if (req.body.email) fieldsToUpdate.email = req.body.email
-	if (req.body.avatar) fieldsToUpdate.avatar = req.body.avatar
+	// Avatar alohida endpoint orqali yuklanadi
 
 	await User.update(fieldsToUpdate, { where: { id: req.user.id } })
 	const user = await User.findByPk(req.user.id)

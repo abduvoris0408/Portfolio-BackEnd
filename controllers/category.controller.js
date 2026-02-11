@@ -59,6 +59,11 @@ exports.deleteImage = asyncHandler(async (req, res, next) => {
 	const category = await Category.findByPk(req.params.id)
 	if (!category) return next(new ErrorResponse('Kategoriya topilmadi', 404))
 	if (category.image?.publicId) await deleteFromCloudinary(category.image.publicId)
-	await category.update({ image: null })
+
+	category.image = null
+	category.changed('image', true)
+	await category.save()
+	await category.reload()
+
 	res.status(200).json({ success: true, message: "Rasm o'chirildi", data: category })
 })

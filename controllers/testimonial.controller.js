@@ -61,6 +61,11 @@ exports.deleteClientImage = asyncHandler(async (req, res, next) => {
     const item = await Testimonial.findByPk(req.params.id)
     if (!item) return next(new ErrorResponse('Fikr topilmadi', 404))
     if (item.clientImage?.publicId) await deleteFromCloudinary(item.clientImage.publicId)
-    await item.update({ clientImage: null })
+
+    item.clientImage = null
+    item.changed('clientImage', true)
+    await item.save()
+    await item.reload()
+
     res.status(200).json({ success: true, message: "Rasm o'chirildi", data: item })
 })

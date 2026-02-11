@@ -68,7 +68,12 @@ exports.deleteImage = asyncHandler(async (req, res, next) => {
     const service = await Service.findByPk(req.params.id)
     if (!service) return next(new ErrorResponse('Xizmat topilmadi', 404))
     if (service.image?.publicId) await deleteFromCloudinary(service.image.publicId)
-    await service.update({ image: null })
+
+    service.image = null
+    service.changed('image', true)
+    await service.save()
+    await service.reload()
+
     res.status(200).json({ success: true, message: "Rasm o'chirildi", data: service })
 })
 

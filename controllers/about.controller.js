@@ -116,7 +116,11 @@ exports.deleteAvatar = asyncHandler(async (req, res, next) => {
 	if (!about) return next(new ErrorResponse("Ma'lumot topilmadi", 404))
 
 	if (about.avatar && about.avatar.publicId) await deleteFromCloudinary(about.avatar.publicId)
-	await about.update({ avatar: { url: '', publicId: '' } })
+
+	about.avatar = null
+	about.changed('avatar', true)
+	await about.save()
+	await about.reload()
 
 	res.status(200).json({ success: true, message: "Avatar o'chirildi", data: {} })
 })
@@ -127,7 +131,11 @@ exports.deleteCover = asyncHandler(async (req, res, next) => {
 	if (!about) return next(new ErrorResponse("Ma'lumot topilmadi", 404))
 
 	if (about.coverImage && about.coverImage.publicId) await deleteFromCloudinary(about.coverImage.publicId)
-	await about.update({ coverImage: { url: '', publicId: '' } })
+
+	about.coverImage = null
+	about.changed('coverImage', true)
+	await about.save()
+	await about.reload()
 
 	res.status(200).json({ success: true, message: "Cover o'chirildi", data: {} })
 })
@@ -138,7 +146,11 @@ exports.deleteResume = asyncHandler(async (req, res, next) => {
 	if (!about) return next(new ErrorResponse("Ma'lumot topilmadi", 404))
 
 	if (about.resume && about.resume.publicId) await deleteFromCloudinary(about.resume.publicId, 'raw')
-	await about.update({ resume: { url: '', publicId: '' } })
+
+	about.resume = null
+	about.changed('resume', true)
+	await about.save()
+	await about.reload()
 
 	res.status(200).json({ success: true, message: "Resume o'chirildi", data: {} })
 })

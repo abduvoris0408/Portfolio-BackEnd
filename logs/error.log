@@ -539,3 +539,7 @@ Require stack:
 2026-02-10 19:06:25 [ERROR]: Error: "category" is required
 2026-02-10 19:06:25 [ERROR]: Error: "category" is required
 2026-02-10 19:06:55 [ERROR]: Error: "category" is required
+2026-02-11 10:50:12 [ERROR]: Error: "categoryId" must be a string
+2026-02-11 11:23:03 [ERROR]: Server ishga tushmadi: column "avatar" cannot be cast automatically to type jsonb
+2026-02-11 11:24:57 [ERROR]: Error: Empty file
+2026-02-11 11:25:23 [ERROR]: Error: Empty file

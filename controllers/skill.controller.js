@@ -62,6 +62,11 @@ exports.deleteImage = asyncHandler(async (req, res, next) => {
 	const skill = await Skill.findByPk(req.params.id)
 	if (!skill) return next(new ErrorResponse('Soha topilmadi', 404))
 	if (skill.image?.publicId) await deleteFromCloudinary(skill.image.publicId)
-	await skill.update({ image: null })
+
+	skill.image = null
+	skill.changed('image', true)
+	await skill.save()
+	await skill.reload()
+
 	res.status(200).json({ success: true, message: "Rasm o'chirildi", data: skill })
 })

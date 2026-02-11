@@ -60,6 +60,11 @@ exports.deleteLogo = asyncHandler(async (req, res, next) => {
     const item = await Partner.findByPk(req.params.id)
     if (!item) return next(new ErrorResponse('Hamkor topilmadi', 404))
     if (item.logo?.publicId) await deleteFromCloudinary(item.logo.publicId)
-    await item.update({ logo: null })
+
+    item.logo = null
+    item.changed('logo', true)
+    await item.save()
+    await item.reload()
+
     res.status(200).json({ success: true, message: "Logo o'chirildi", data: item })
 })

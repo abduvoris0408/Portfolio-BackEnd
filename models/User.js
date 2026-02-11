@@ -37,8 +37,9 @@ const User = sequelize.define('users', {
 		defaultValue: 'admin',
 	},
 	avatar: {
-		type: DataTypes.STRING(500),
-		defaultValue: '',
+		type: DataTypes.JSONB,
+		defaultValue: null,
+		comment: '{ url, publicId }',
 	},
 	refreshToken: {
 		type: DataTypes.TEXT,

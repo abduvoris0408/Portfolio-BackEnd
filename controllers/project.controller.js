@@ -69,7 +69,12 @@ exports.deleteImage = asyncHandler(async (req, res, next) => {
 	const project = await Project.findByPk(req.params.id)
 	if (!project) return next(new ErrorResponse('Loyiha topilmadi', 404))
 	if (project.image?.publicId) await deleteFromCloudinary(project.image.publicId)
-	await project.update({ image: null })
+
+	project.image = null
+	project.changed('image', true)
+	await project.save()
+	await project.reload()
+
 	res.status(200).json({ success: true, message: "Rasm o'chirildi", data: project })
 })
 
@@ -97,6 +102,11 @@ exports.deleteGalleryImage = asyncHandler(async (req, res, next) => {
 
 	if (gallery[index].publicId) await deleteFromCloudinary(gallery[index].publicId)
 	gallery.splice(index, 1)
-	await project.update({ gallery })
+
+	project.gallery = gallery
+	project.changed('gallery', true)
+	await project.save()
+	await project.reload()
+
 	res.status(200).json({ success: true, message: "Rasm o'chirildi", data: project })
 })

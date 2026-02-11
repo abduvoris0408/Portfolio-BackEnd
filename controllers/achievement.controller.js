@@ -60,6 +60,11 @@ exports.deleteImage = asyncHandler(async (req, res, next) => {
     const item = await Achievement.findByPk(req.params.id)
     if (!item) return next(new ErrorResponse('Yutuq topilmadi', 404))
     if (item.image?.publicId) await deleteFromCloudinary(item.image.publicId)
-    await item.update({ image: null })
+
+    item.image = null
+    item.changed('image', true)
+    await item.save()
+    await item.reload()
+
     res.status(200).json({ success: true, message: "Rasm o'chirildi", data: item })
 })
