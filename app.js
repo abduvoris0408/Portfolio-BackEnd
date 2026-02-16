@@ -1,7 +1,7 @@
 const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
-const rateLimit = require('express-rate-limit')
+
 const cookieParser = require('cookie-parser')
 
 const config = require('./config/env.config')
@@ -23,30 +23,7 @@ app.use(cors({
 	allowedHeaders: ['Content-Type', 'Authorization'],
 }))
 
-// Rate limiting – umumiy
-const limiter = rateLimit({
-	windowMs: config.rateLimit.windowMs,
-	max: config.rateLimit.max,
-	message: {
-		success: false,
-		message: "Ko'p so'rov yuborildi. Biroz kuting.",
-	},
-	standardHeaders: true,
-	legacyHeaders: false,
-})
-app.use('/api', limiter)
 
-// Auth uchun qattiqroq rate limit
-const authLimiter = rateLimit({
-	windowMs: 15 * 60 * 1000, // 15 daqiqa
-	max: 10, // 10 ta urinish
-	message: {
-		success: false,
-		message: "Ko'p login urinishi. 15 daqiqadan keyin urinib ko'ring.",
-	},
-	standardHeaders: true,
-	legacyHeaders: false,
-})
 
 // PostgreSQL parameterized queries orqali SQL injection himoyalangan
 
@@ -84,7 +61,7 @@ app.get('/health', (req, res) => {
 const apiPrefix = `${config.api.prefix}/${config.api.version}`
 
 // Auth (with stricter rate limit)
-app.use(`${apiPrefix}/auth`, authLimiter, require('./routes/auth.routes'))
+app.use(`${apiPrefix}/auth`, require('./routes/auth.routes'))
 
 // Content routes
 app.use(`${apiPrefix}/about`, require('./routes/about.routes'))

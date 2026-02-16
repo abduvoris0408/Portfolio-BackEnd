@@ -1379,3 +1379,18 @@ Require stack:
 2026-02-11 11:26:36 [INFO]: 🌍 Environment: development
 2026-02-11 11:26:36 [INFO]: 🐘 Database: PostgreSQL (example_db)
 2026-02-11 17:45:16 [INFO]: SIGINT signal qabul qilindi, server yopilmoqda...
+2026-02-16 12:54:14 [INFO]: PostgreSQL muvaffaqiyatli ulandi! 🐘
+2026-02-16 12:54:15 [INFO]: 📋 Jadvallar sinxronlashtirildi!
+2026-02-16 12:54:15 [INFO]: ✅ Admin mavjud: admin@portfolio.com
+2026-02-16 12:54:15 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-02-16 12:54:15 [INFO]: 📚 API: http://localhost:5000/api/v1
+2026-02-16 12:54:15 [INFO]: 🌍 Environment: development
+2026-02-16 12:54:15 [INFO]: 🐘 Database: PostgreSQL (example_db)
+2026-02-16 15:28:57 [INFO]: PostgreSQL muvaffaqiyatli ulandi! 🐘
+2026-02-16 15:28:58 [INFO]: 📋 Jadvallar sinxronlashtirildi!
+2026-02-16 15:28:58 [INFO]: ✅ Admin mavjud: admin@portfolio.com
+2026-02-16 15:28:58 [INFO]: 🚀 Server ishga tushdi: http://localhost:5000
+2026-02-16 15:28:58 [INFO]: 📚 API: http://localhost:5000/api/v1
+2026-02-16 15:28:58 [INFO]: 🌍 Environment: development
+2026-02-16 15:28:58 [INFO]: 🐘 Database: PostgreSQL (example_db)
+2026-02-16 15:29:46 [INFO]: SIGINT signal qabul qilindi, server yopilmoqda...
