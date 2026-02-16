@@ -21,6 +21,15 @@ const sequelize = new Sequelize(
 			underscored: true, // snake_case column nomlari
 			freezeTableName: true,
 		},
+		// YANGI QATORLAR — SSL uchun (faqat productionda yoqilsin)
+		dialectOptions: {
+			ssl: process.env.NODE_ENV === 'production'
+				? {
+					require: true,              // SSL majburiy
+					rejectUnauthorized: false   // Render self-signed certificate uchun
+				}
+				: false
+		}
 	},
 )
 
@@ -30,7 +39,7 @@ const connectDB = async () => {
 		logger.info('PostgreSQL muvaffaqiyatli ulandi! 🐘')
 		return sequelize
 	} catch (error) {
-		logger.error(`PostgreSQL ulanish xatosi: ${error.message}`)
+		logger.error(`PostgreSQL ulanish xatosi: ${error.message}`, { error })  // Batafsil log uchun
 		throw error
 	}
 }
