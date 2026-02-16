@@ -45,15 +45,7 @@ const User = sequelize.define('users', {
 		type: DataTypes.TEXT,
 		field: 'refresh_token',
 	},
-	loginAttempts: {
-		type: DataTypes.INTEGER,
-		defaultValue: 0,
-		field: 'login_attempts',
-	},
-	lockUntil: {
-		type: DataTypes.DATE,
-		field: 'lock_until',
-	},
+
 	lastLogin: {
 		type: DataTypes.DATE,
 		field: 'last_login',
@@ -74,7 +66,7 @@ const User = sequelize.define('users', {
 		},
 	},
 	defaultScope: {
-		attributes: { exclude: ['password', 'refreshToken', 'loginAttempts', 'lockUntil'] },
+		attributes: { exclude: ['password', 'refreshToken'] },
 	},
 	scopes: {
 		withPassword: { attributes: {} },
@@ -98,29 +90,6 @@ User.prototype.getRefreshToken = function () {
 	})
 }
 
-User.prototype.incrementLoginAttempts = async function () {
-	const MAX_ATTEMPTS = 5
-	const LOCK_TIME = 30 * 60 * 1000 // 30 daqiqa
 
-	this.loginAttempts += 1
-	if (this.loginAttempts >= MAX_ATTEMPTS) {
-		this.lockUntil = new Date(Date.now() + LOCK_TIME)
-	}
-	await this.save()
-}
-
-User.prototype.resetLoginAttempts = async function () {
-	this.loginAttempts = 0
-	this.lockUntil = null
-	this.lastLogin = new Date()
-	await this.save()
-}
-
-// Virtual getter
-Object.defineProperty(User.prototype, 'isLocked', {
-	get() {
-		return this.lockUntil && this.lockUntil > Date.now()
-	},
-})
 
 module.exports = User

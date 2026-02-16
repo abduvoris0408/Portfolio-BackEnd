@@ -46,22 +46,13 @@ exports.login = asyncHandler(async (req, res, next) => {
 		return next(new ErrorResponse("Email yoki parol noto'g'ri", 401))
 	}
 
-	if (user.isLocked) {
-		const lockTime = Math.ceil((user.lockUntil - Date.now()) / 60000)
-		return next(
-			new ErrorResponse(`Account bloklangan. ${lockTime} daqiqadan keyin urinib ko'ring`, 423),
-		)
-	}
-
 	const isMatch = await user.matchPassword(password)
 
 	if (!isMatch) {
-		await user.incrementLoginAttempts()
 		return next(new ErrorResponse("Email yoki parol noto'g'ri", 401))
 	}
 
-	await user.resetLoginAttempts()
-
+	user.lastLogin = new Date()
 	const refreshToken = user.getRefreshToken()
 	user.refreshToken = refreshToken
 	await user.save()
